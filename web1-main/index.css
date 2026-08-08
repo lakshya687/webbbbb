@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #14161B;
+  --text: #F5F1E8;
+  --amber: #F2A93B;
+  --blueprint: #4C7EA8;
+  --slate: #2A2E38;
+}
+
+html, body, #root {
+  background-color: #14161B;
+  color: #F5F1E8;
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+.font-display {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.blueprint-grid {
+  background-color: #14161B;
+  background-image:
+    linear-gradient(rgba(42, 46, 56, 0.6) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42, 46, 56, 0.6) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center;
+  position: relative;
+}
+
+.blueprint-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, transparent 0%, #14161B 75%);
+  pointer-events: none;
+}
+
+/* PromptVerse AI Design System */
+
+.pv-bg {
+  background-color: #0A0B14;
+}
+
+.pv-aurora-bg {
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(168, 85, 247, 0.15), transparent 50%),
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(59, 130, 246, 0.12), transparent 50%),
+    radial-gradient(ellipse 70% 60% at 50% 80%, rgba(34, 211, 238, 0.08), transparent 50%),
+    #0A0B14;
+}
+
+.pv-glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pv-glass-strong {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pv-glow-border {
+  position: relative;
+}
+
+.pv-glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.5), rgba(59, 130, 246, 0.3), rgba(34, 211, 238, 0.4));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pv-glow-border:hover::before {
+  opacity: 1;
+}
+
+.pv-gradient-text {
+  background: linear-gradient(135deg, #A855F7 0%, #3B82F6 40%, #22D3EE 70%, #EC4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pv-gradient-button {
+  background: linear-gradient(135deg, #A855F7, #3B82F6);
+  background-size: 200% 200%;
+  transition: background-position 0.5s ease;
+}
+
+.pv-gradient-button:hover {
+  background-position: 100% 100%;
+}
+
+.pv-card-hover {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.pv-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(168, 85, 247, 0.2);
+}
+
+.pv-aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #14161B;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A2E38;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3e48;
+}
+
+::selection {
+  background: rgba(242, 169, 59, 0.3);
+  color: #F5F1E8;
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
